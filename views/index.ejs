@@ -9,21 +9,29 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
       <div><img src="/images/logo.png" class="logo" /></div>
-      <ul class="nav-links">
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" class="btn join">Join Free</a></li>
-        <li><a href="#" class="btn demo">Book a Demo</a></li>
-        <li><a href="#">Login</a></li>
+      
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" onclick="closeMenu()">Features</a></li>
+        <li><a href="#" onclick="closeMenu()">Pricing</a></li>
+        <li><a href="#" onclick="closeMenu()">Contact</a></li>
+        <li><a href="#" class="btn join" onclick="closeMenu()">Join Free</a></li>
+        <li><a href="#" class="btn demo" onclick="closeMenu()">Book a Demo</a></li>
+        <li><a href="#" onclick="closeMenu()">Login</a></li>
       </ul>
     </nav>
 
@@ -35,7 +43,7 @@
   </p>
 
   <div class="laptop-image">
-    <img src="/images/laptop.png" alt="Dashboard Preview" />
+    <img src="/images/laptop1.png" alt="Dashboard Preview" />
   </div>
 
   <a href="#" class="cta-btn">Try For Free Today!</a>
@@ -242,5 +250,48 @@
     </p>
   </div>
 </footer>
+
+<script>
+  // Hamburger Menu Toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu function
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideNav = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // Prevent body scroll when menu is open
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.target.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  observer.observe(navLinks, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+</script>
   </body>
 </html>
