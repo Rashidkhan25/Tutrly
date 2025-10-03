@@ -10,7 +10,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
@@ -26,12 +26,12 @@
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#" onclick="closeMenu()">Features</a></li>
-        <li><a href="#" onclick="closeMenu()">Pricing</a></li>
-        <li><a href="#" onclick="closeMenu()">Contact</a></li>
-        <li><a href="#" class="btn join" onclick="closeMenu()">Join Free</a></li>
-        <li><a href="#" class="btn demo" onclick="closeMenu()">Book a Demo</a></li>
-        <li><a href="#" onclick="closeMenu()">Login</a></li>
+        <li><a href="#" onclick="closeMenu()" style="font-family: Outfit;">Features</a></li>
+        <li><a href="#" onclick="closeMenu()" style="font-family: Outfit;">Pricing</a></li>
+        <li><a href="#" onclick="closeMenu()" style="font-family: Outfit;">Contact</a></li>
+        <li><a href="#" class="btn join" onclick="closeMenu()" style="font-family: Outfit;">Join Free</a></li>
+        <li><a href="#" class="btn demo" onclick="closeMenu()" style="font-family: Outfit;">Book a Demo</a></li>
+        <li><a href="#" onclick="closeMenu()" style="font-family: Outfit;">Login</a></li>
       </ul>
     </nav>
 
@@ -70,7 +70,7 @@
           <p>Travelling Tutors</p>
         </div>
         <div class="feature-card green">
-          <img src="/images/online-icon.png" alt="Online Tutoring" />
+          <img src="/images/tutoring.png" alt="Online Tutoring" />
           <p>Online Tutoring</p>
         </div>
       </div>
@@ -125,13 +125,13 @@
       <div class="feature-box reverse">
         <div class="feature-illustration">
           <img
-            src="/images/attendance_teachers.png"
-            alt="Teacher List"
+            src="/images/payment.png"
+            alt="Payments"
             class="teacher-img"
           />
           <img
-            src="/images/attendance_students.png"
-            alt="Student Attendance"
+            src="/images/upi.png"
+            alt="upi"
             class="student-img"
           />
           <img
@@ -231,22 +231,24 @@
     inset:0;
     background: linear-gradient(to bottom,white 5%, transparent),
     radial-gradient(circle at bottom left, rgba(0,255,200,0.4), transparent 60%),
-                radial-gradient(circle at center, rgba(200,150,255,0.4), transparent 70%),
-                radial-gradient(circle at right, rgba(255,180,180,0.5), transparent 60%),
-                radial-gradient(circle at bottom right, rgba(255,200,150,0.4), transparent 70%);
+                radial-gradient(circle at right, rgba(255, 81, 81, 0.5), transparent 60%),
+                radial-gradient(circle at bottom right, rgba(255, 159, 70, 0.4), transparent 70%);
   ">
   </div>
   <div style="
     position:relative;
     display:flex;
-    align-items:flex-end;
-    justify-content:flex-start;
+    flex-direction: column;
+    justify-content: end;
     height:100%;
     padding:15px;
     margin-left:65px;
   ">
-    <p style="color:white; font-size:16px; margin:0;">
-      &copy; Copyright © 2025 Salins Technologies Pvt Ltd.
+  <p style="font-size: 14px; text-align: left; @media (max-width: 767px) {
+    font-size: 10px !important;
+  }">Terms | Privacy | Legal</p>
+    <p style="color: #333; font-size:16px; margin:0; text-align: start;">
+      Copyright © 2025 Salins Technologies Pvt Ltd.
     </p>
   </div>
 </footer>

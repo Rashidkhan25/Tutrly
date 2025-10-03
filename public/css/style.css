@@ -35,23 +35,35 @@
  .nav-links a {
    text-decoration: none;
    color: white;
-   font-weight: 700;
-   font-size: 15px;
+   font-weight: 500;
+   font-size: 16px;
  }
 
  .btn {
-   padding: 8px 16px;
+   padding: 6px 16px;
    border-radius: 15px;
  }
 
  .join {
    background: #ffffff;
    color: #FF94546B !important;
+   border: 2px solid #ffffff;
+ }
+
+ .join:hover {
+  color: #ffffff !important;
+  background: none;
+  border: 2px solid #ffffff;
  }
 
  .demo {
    background: none;
    border: 2px solid #ffffff;
+ }
+
+ .demo:hover{
+  background: white;
+  color: #FF94546B !important;
  }
 
  /* Hero Section */
@@ -766,7 +778,6 @@
 
   footer p {
     font-size: 12px !important;
-    text-align: center;
   }
 }
 
